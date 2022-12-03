@@ -4,18 +4,6 @@ import torch.nn.functional
 from encoding import getEncoder
 
 
-# def createEncodingFunction(numEncoding):
-#     def encoder(x: torch.Tensor) -> torch.Tensor:
-#         frequencies = 2 ** torch.linspace(0, numEncoding - 1, numEncoding, dtype=x.dtype, device=x.device)
-#         encoding = [x]
-#         for freq in frequencies:
-#             encoding += [torch.sin(freq * x), torch.cos(freq * x)]
-#
-#         return torch.cat(encoding, dim=-1)
-#
-#     return encoder, 6 * numEncoding + 3
-#
-
 class NeRF(nn.Module):
     def __init__(self, numLayerPosition=8, numLayerColor=1,
                  positionHiddenDim=256, colorHiddenDim=128,

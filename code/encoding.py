@@ -13,7 +13,7 @@ def getEncoder(
     encoder = PositionalEncoding(num_freq, log_scale=log_scale)
 
     def encode(x):
-        encoder.encode(x)
+        return encoder.encode(x)
 
     return encode, encoder.getOutputChannels()
 

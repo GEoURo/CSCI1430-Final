@@ -13,3 +13,4 @@ data/*
 *.fdb_latexmk
 *.aux
 
+code/logs
