@@ -74,6 +74,8 @@ def main():
         images = torch.from_numpy(images)
         poses = torch.from_numpy(poses)
 
+    print("data load complete")
+
     # Seed experiment for repeatability
     seed = cfg.experiment.randomseed
     np.random.seed(seed)
@@ -106,6 +108,8 @@ def main():
 
     # Setup logging.
     logdir = os.path.join(cfg.experiment.logdir, cfg.experiment.id)
+    print("log directory:", logdir)
+
     os.makedirs(logdir, exist_ok=True)
     writer = SummaryWriter(logdir)
     # Write out config parameters.
